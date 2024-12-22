@@ -1,0 +1,311 @@
+/* Main CSS for Echoes of the Savannah Adventures */
+
+/* Universal Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 16px;
+  color: #1a0e10;
+  line-height: 1.6;
+}
+
+/* Color Palette */
+:root {
+  --primary-color: #863e39;
+  --secondary-color: #1a0e10;
+  --accent-color: #c94430;
+  --highlight-color: #fbe853;
+  --light-bg: #f9f9f9;
+}
+
+/* Header Styles */
+.header-wrapper {
+  background-color: var(--light-bg);
+  border-bottom: 1px solid #ddd;
+}
+
+.top-header {
+  background-color: var(--primary-color);
+  color: var(--highlight-color);
+  padding: 10px 0;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.top-header ul {
+  display: flex;
+  list-style: none;
+}
+
+.top-header ul li {
+  padding: 0 15px;
+  font-size: 14px;
+}
+
+.navbar {
+  background-color: var(--light-bg);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition: background-color 0.3s;
+}
+
+.navbar.scrolled {
+  background-color: var(--primary-color);
+  color: var(--highlight-color);
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: var(--primary-color);
+}
+
+/* Footer Styles */
+.footer {
+  background-color: var(--secondary-color);
+  color: var(--highlight-color);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer a {
+  color: var(--highlight-color);
+}
+
+.footer a:hover {
+  color: var(--accent-color);
+}
+
+.social-links a {
+  color: var(--highlight-color);
+  margin: 0 10px;
+  font-size: 18px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--accent-color);
+  transform: scale(1.2);
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color);
+}
+
+.btn-secondary {
+  background-color: var(--highlight-color);
+  color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+/* Section Headings */
+h2 {
+  text-align: center;
+  font-size: 32px;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  padding: 20px; /* Space inside the hero section */
+  box-sizing: border-box; /* Includes padding in total width calculation */
+}
+
+.hero img {
+  width: 100%; /* Stretches the image to fill the container width */
+  object-fit: cover; /* Ensures the image is cropped proportionally */
+}
+
+.hero .slider-caption {
+  position: absolute;
+  bottom: 20px; /* Adjust this value as needed */
+  left: 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Adds a semi-transparent background */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+.hero-section h1 {
+  margin: 0 auto;
+  max-width: 80%;
+  font-size: 36px;
+  color: var(--primary-color);
+}
+
+@media (max-width: 600px) {
+  .hero img {
+      max-height: 300px; /* Reduce size for smaller screens */
+  }
+}
+
+
+/* Carousel Controls */
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.prev-arrow, .next-arrow {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.prev-arrow:hover, .next-arrow:hover {
+  background-color: var(--primary-color);
+}
+
+/* Gallery */
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Testimonials */
+.testimonial {
+  background-color: var(--light-bg);
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.testimonial h5 {
+  color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .top-header {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .top-header ul {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 10px;
+  }
+
+  .navbar-nav {
+      flex-direction: column;
+  }
+
+  .gallery img {
+      margin-bottom: 20px;
+  }
+
+  .testimonial {
+      margin-bottom: 20px;
+  }
+
+  .btn {
+      width: 100%;
+  }
+}
+/* Back to Top Button */
+.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #c94430;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: #863e39;
+}
+
+.back-to-top i {
+  font-size: 18px;
+}
+
+/* Accessibility Enhancements */
+a:focus, .btn:focus {
+  outline: 2px dashed var(--accent-color);
+  outline-offset: 3px;
+}
+
+img[alt=""] {
+  background-color: var(--accent-color);
+  color: white;
+  text-align: center;
+}
+
